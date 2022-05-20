@@ -16,7 +16,7 @@
 
     </head>
     <body>
-      <audio autoplay="autopaly">
+      <audio controls autoplay id="music">
           <source src="./music_love.mp3" type="audio/mp3" />
       </audio> 
         <div id="main">
@@ -48,6 +48,11 @@
         </div>
     
     <script>
+        document.addEventListener('click', musicPlay);
+        function musicPlay() {
+                document.getElementById('music').play();
+                document.removeEventListener('click', musicPlay);
+        }
     </script>
 
     <script>
@@ -209,6 +214,8 @@
         runAsync().start();
     })();
     </script>
+    
+    
 
 
 
